@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('posts/', views.posts),
+    path('posts/<post_name>', views.posts_dynamic),
 ]
