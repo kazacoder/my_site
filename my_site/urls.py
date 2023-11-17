@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('posts/', views.posts),
+    path('posts/<int:post_number>', views.posts_dynamic_by_number),
     path('posts/<post_name>', views.posts_dynamic),
 ]
