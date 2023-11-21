@@ -18,8 +18,8 @@ def posts(request):
 
 
 def posts_dynamic(request, post_name):
-    return HttpResponse(f'Информация о посте <u><b>{post_name}</b></u>' + back + home)
+    return render(request, 'blog/detail_by_name.html', {'title': post_name})
 
 
 def posts_dynamic_by_number(request, post_number):
-    return HttpResponse(f'Информация о посте под номером <u><b>{post_number}</b></u>' + back + home)
+    return render(request, 'blog/detail_by_number.html', {'number': post_number})
