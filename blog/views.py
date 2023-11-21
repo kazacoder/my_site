@@ -14,7 +14,7 @@ def index(request):
 
 
 def posts(request):
-    return HttpResponse('Все посты блога' + back + home)
+    return render(request, 'blog/list_detail.html')
 
 
 def posts_dynamic(request, post_name):
