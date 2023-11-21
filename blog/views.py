@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.template.loader import render_to_string
 from django.shortcuts import render
 
 # Create your views here.
@@ -8,10 +9,8 @@ back = '<br><a href="..">back</a>'
 
 
 def index(request):
-    return HttpResponse('''
-                        <h1>Главная страница</h1>
-                        <a href="posts">Все посты</a>
-                        ''')
+    response = render_to_string('blog/index.html')
+    return HttpResponse(response)
 
 
 def posts(request):
