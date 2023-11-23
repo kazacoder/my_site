@@ -2,6 +2,23 @@
 {% block title %}
     Home
 {% endblock %}
+
+{% block content %}
+    <div class="leftcolumn">
+        {% for post in posts %}
+            <a href="posts">
+                <div class="card">
+                <h2>{{ post.title }}</h2>
+                <h5>{{ post.description }}, {{ post.date }}</h5>
+                <div class="fakeimg" style="height:200px;">Image</div>
+                <p>{{ post.content }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
 </head>
 <body>
     <h2>Главная страница</h2>

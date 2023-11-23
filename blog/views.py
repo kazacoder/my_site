@@ -1,6 +1,6 @@
-from django.http import HttpResponse
-from django.template.loader import render_to_string
+from random import choices
 from django.shortcuts import render
+from .posts import posts as posts_list
 
 # Create your views here.
 
@@ -9,8 +9,8 @@ back = '<br><a href="..">back</a>'
 
 
 def index(request):
-    response = render_to_string('blog/index.html')
-    return HttpResponse(response)
+    context = {'posts': choices(posts_list, k=3)}
+    return render(request, 'blog/index.html', context)
 
 
 def posts(request):
@@ -23,3 +23,4 @@ def posts_dynamic(request, post_name):
 
 def posts_dynamic_by_number(request, post_number):
     return render(request, 'blog/detail_by_number.html', {'number': post_number})
+
